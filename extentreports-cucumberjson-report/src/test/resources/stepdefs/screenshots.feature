@@ -1,5 +1,5 @@
 @website
-Feature: Scenarios Three feature file for screenshot
+Feature: Screenshots
 
   Scenario: Scenario screenshot
     Given Go to https://stackoverflow.com/
