@@ -23,6 +23,16 @@ public class Stepdefs {
 
 	private Scenario scenario;
 
+	@Before
+	public void before() {
+		
+	}
+	
+	@After
+	public void after() {
+		
+	}
+	
 	@Given("Write a {string} step with precondition in {string}")
 	@When("Complete action in {string} step in {string}")
 	@Then("Validate the outcome in {string} step in {string}")
