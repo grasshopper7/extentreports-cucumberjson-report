@@ -57,7 +57,7 @@
 			<plugin>
 				<groupId>tech.grasshopper</groupId>
 				<artifactId>extentreports-cucumberjson-plugin</artifactId>
-				<version>1.5.0</version>
+				<version>1.5.1</version>
 				<executions>
 					<execution>
 						<id>report</id>
@@ -70,7 +70,7 @@
 				<configuration>
 					<cucumberJsonReportDirectory>${project.build.directory}</cucumberJsonReportDirectory>
 					<extentPropertiesDirectory>${project.build.testResources[0].directory}</extentPropertiesDirectory>
-					<displayAllHooks>true</displayAllHooks>
+					<displayAllHooks>false</displayAllHooks>
 				</configuration>
 			</plugin>
 		</plugins>
