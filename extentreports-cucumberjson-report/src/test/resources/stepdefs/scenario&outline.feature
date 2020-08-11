@@ -1,3 +1,4 @@
+@both
 Feature: Scenario And Scenario Outline
 
   Scenario Outline: Scenario Outline Row <row_num>

@@ -11,7 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
 	
-		<cucumber.version>6.2.1</cucumber.version>
+		<cucumber.version>6.4.0</cucumber.version>
 	</properties>
 
 	<dependencies>
@@ -57,7 +57,7 @@
 			<plugin>
 				<groupId>tech.grasshopper</groupId>
 				<artifactId>extentreports-cucumberjson-plugin</artifactId>
-				<version>1.5.1</version>
+				<version>1.6.0</version>
 				<executions>
 					<execution>
 						<id>report</id>
