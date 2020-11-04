@@ -15,6 +15,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -151,5 +152,10 @@ public class Stepdefs {
 		scenario.attach(screenshot, "image/png", this.site);
 		//scenario.log("HELLO THERE!!!");
 		driver.quit();
+	}
+	
+	@Given("Pending step definition")
+	public void pendingStep() throws PendingException {
+		throw new PendingException();
 	}
 }
