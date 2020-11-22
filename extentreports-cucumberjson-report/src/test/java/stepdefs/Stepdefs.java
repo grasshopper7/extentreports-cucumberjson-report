@@ -58,7 +58,6 @@ public class Stepdefs {
 		//System.out.println("After failure");
 		scenario.log("FAILURE HI");
 		scenario.log("FAILURE HELLO");
-		throw new RuntimeException();
 	}
 	
 	@BeforeStep (value = "@failure")
@@ -76,7 +75,8 @@ public class Stepdefs {
 		//System.out.println("Failure step");
 		scenario.log("FAILURE STEP HI");
 		scenario.log("FAILURE STEP HELLO");
-	    Thread.sleep(500);
+		throw new RuntimeException();
+	    //Thread.sleep(500);
 	}
 	
 	@Given("Skip hook failure step")
