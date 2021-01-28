@@ -1,6 +1,5 @@
 package stepdefs;
 
-
 import static org.testng.Assert.assertEquals;
 
 import java.util.List;
@@ -32,63 +31,63 @@ public class Stepdefs {
 
 	private Scenario scenario;
 
-	@Before (value = "not @failure")
+	@Before(value = "not @failure")
 	public void before(Scenario scenario) {
 		this.scenario = scenario;
 		scenario.log("BEFORE HI");
 		scenario.log("BEFORE HELLO");
 	}
-	
-	@After (value = "not @failure")
+
+	@After(value = "not @failure")
 	public void after(Scenario scenario) {
-		
+
 	}
-	
-	@Before (value = "@failure")
+
+	@Before(value = "@failure")
 	public void beforeFailure(Scenario scenario) {
-		//System.out.println("Before failure");
+		// System.out.println("Before failure");
 		this.scenario = scenario;
 		scenario.log("FAILURE HI");
 		scenario.log("FAILURE HELLO");
 		throw new RuntimeException();
 	}
-	
-	@After (value = "@failure")
+
+	@After(value = "@failure")
 	public void afterFailure() {
-		//System.out.println("After failure");
+		// System.out.println("After failure");
 		scenario.log("FAILURE HI");
 		scenario.log("FAILURE HELLO");
 	}
-	
-	@BeforeStep (value = "@failure")
+
+	@BeforeStep(value = "@failure")
 	public void beforeStepFailure() {
-		//System.out.println("Before Step failure");
+		// System.out.println("Before Step failure");
 	}
-	
-	@AfterStep (value = "@failure")
+
+	@AfterStep(value = "@failure")
 	public void afterStepFailure() {
-		//System.out.println("After Step failure");
+		// System.out.println("After Step failure");
 	}
-	
+
 	@Given("Hook failure step")
 	public void hook_failure_step() throws InterruptedException {
-		//System.out.println("Failure step");
+		// System.out.println("Failure step");
 		scenario.log("FAILURE STEP HI");
 		scenario.log("FAILURE STEP HELLO");
 		throw new RuntimeException();
-	    //Thread.sleep(500);
+		// Thread.sleep(500);
 	}
-	
+
 	@Given("Skip hook failure step")
 	public void skip_hook_failure_step() throws InterruptedException {
-	    Thread.sleep(250);
+		Thread.sleep(250);
 	}
-	
+
 	@Given("{string} background")
 	public void background(String type) {
 		System.out.format("%s type background. \n", type);
 	}
-	
+
 	@Given("Write a {string} step with precondition in {string}")
 	@When("Complete action in {string} step in {string}")
 	@Then("Validate the outcome in {string} step in {string}")
@@ -127,11 +126,12 @@ public class Stepdefs {
 	public void visitweb(String site) throws Exception {
 		driver.get(site);
 		this.site = site;
-		//scenario.log("scenario log");
+		// scenario.log("scenario log");
 		scenario.log("scenario website name - " + site);
 		Thread.sleep(3000);
-		//byte[] screenshot = Files.readAllBytes(new File("src/test/resources/logo.png").toPath());
-		//scenario.attach(screenshot, "image/png", this.site);
+		// byte[] screenshot = Files.readAllBytes(new
+		// File("src/test/resources/logo.png").toPath());
+		// scenario.attach(screenshot, "image/png", this.site);
 	}
 
 	@BeforeStep(value = "@website")
@@ -147,13 +147,13 @@ public class Stepdefs {
 	public void afterSite(Scenario scenario) {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-		//scenario.attach(screenshot, "image/png", this.site);
-		// scenario.attach(screenshot, "image/png");
+		// scenario.embed(screenshot, "image/png", this.site);
+		// scenario.embed(screenshot, "image/png");
 		scenario.attach(screenshot, "image/png", this.site);
-		//scenario.log("HELLO THERE!!!");
+		// scenario.log("HELLO THERE!!!");
 		driver.quit();
 	}
-	
+
 	@Given("Pending step definition")
 	public void pendingStep() throws PendingException {
 		throw new PendingException();
