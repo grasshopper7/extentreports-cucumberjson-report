@@ -4,7 +4,7 @@ Feature: Scenario And Scenario Outline
   Background: 
     Given 'Hello' background
     
-  Scenario Outline: Scenario Outline Row <row_num>
+  Scenario Outline: Scenario_Outline-Row <row_num>
     Given Write a 'given' step with precondition in '<scenario_num><row_num>'
     When Complete action in 'when' step in '<scenario_num><row_num>'
     Then Validate the outcome in 'then' step in '<scenario_num><row_num>'
