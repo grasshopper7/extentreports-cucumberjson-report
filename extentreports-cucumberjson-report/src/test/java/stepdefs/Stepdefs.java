@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.SkipException;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
@@ -157,5 +158,10 @@ public class Stepdefs {
 	@Given("Pending step definition")
 	public void pendingStep() throws PendingException {
 		throw new PendingException();
+	}
+
+	@Given("Skipped step definition")
+	public void skippedStep() {
+		throw new SkipException("SKip it");
 	}
 }
