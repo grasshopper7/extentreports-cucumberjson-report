@@ -31,6 +31,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Stepdefs {
 
 	private Scenario scenario;
+	
+	@Given("Hello background")
+	public void background() throws InterruptedException {
+		this.scenario.log("background");
+		Thread.sleep(250);
+	}
 
 	@Before(value = "not @failure")
 	public void before(Scenario scenario) {
@@ -135,7 +141,7 @@ public class Stepdefs {
 		// scenario.attach(screenshot, "image/png", this.site);
 	}
 
-	@BeforeStep(value = "@website")
+	@BeforeStep(value = "@website or @large")
 	public void beforeSite(Scenario scenario) {
 		this.scenario = scenario;
 		WebDriverManager.chromedriver().setup();
@@ -144,7 +150,7 @@ public class Stepdefs {
 		scenario.log("HELLO THERE!!!");
 	}
 
-	@AfterStep(value = "@website")
+	@AfterStep(value = "@website or @large")
 	public void afterSite(Scenario scenario) {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
