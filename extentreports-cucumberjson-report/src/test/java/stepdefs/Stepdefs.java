@@ -31,7 +31,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Stepdefs {
 
 	private Scenario scenario;
-	
+
 	@Given("Hello background")
 	public void background() throws InterruptedException {
 		this.scenario.log("background");
@@ -123,6 +123,7 @@ public class Stepdefs {
 
 	@Given("the doc string is")
 	public void docStr(String docStr) {
+
 		System.out.println(docStr);
 	}
 
@@ -168,6 +169,46 @@ public class Stepdefs {
 
 	@Given("Skipped step definition")
 	public void skippedStep() {
-		throw new SkipException("SKip it");
+		throw new SkipException("Skip it");
+	}
+
+	@Given("Only text log")
+	public void only_text_log() {
+		scenario.log(
+				"Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text.");
+	}
+
+	@Given("Only table log")
+	public void only_table_log() {
+		scenario.log("<table><tr><th>1</th><th>2</th></tr><tr><td>A</td><td>B</td></tr>"
+				+ "<tr><td>C</td><td>D</td></tr></table>");
+	}
+
+	@Given("Both logs")
+	public void both_logs() {
+		scenario.log(
+				"Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text. Text log is just text.");
+
+		scenario.log("<table><tr><th>heading 1</th><th>Heading 2</th></tr><tr><td>hi</td><td>Hello</td></tr>"
+				+ "<tr><td>hi 2</td><td>Hello Two</td></tr>"
+				+ "<tr><td>Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details.</td><td>Hello Two</td></tr>"
+				+ "</table>");
+	}
+
+	@Given("Mega table log")
+	public void mega_table_log() {
+		scenario.log(
+				"<html><body><input></input><table><tr><th>heading 1</th><th>Heading 2</th><th>heading 3</th><th>Heading 4</th></tr><tr><td>hi</td><td>Hello</td><td>hi</td><td>Hello</td></tr>"
+						+ "<tr><td>hi 2</td><td>Hello Two</td><td>hi 3</td><td>Hello Four</td></tr>"
+						+ "<tr><td>Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details.</td><td>Hello Two</td><td>Hello Three</td><td>Hello Four Hello 4 Hello 4</td></tr>"
+						+ "<tr><td>Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details. Real big cell details.</td><td>Hello Two</td><td>Hello Three</td><td>Hello Four Hello 4 Hello 4  BIG BIG BIG  BIG BIG BIG LARGE ONE HERE</td></tr>"
+						+ "</table>");
+	}
+
+	@Given("Wrong span table log")
+	public void wrong_span_table_log() {
+		scenario.log(
+				"<table><tr><th rowspan=1>heading 1</th><th colspan=1>Heading 2</th></tr><tr><td rowspan=2>hi</td><td colspan=3>Hello</td></tr>"
+						+ "<tr><td>111</td><td>222</td></tr></table>");
 	}
 }
