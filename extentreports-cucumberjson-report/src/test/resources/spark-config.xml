@@ -23,22 +23,18 @@
 		<reportName>Grasshopper Report</reportName>
 		<!-- location of charts in the test view -->
 
-		<!-- top, bottom -->
 
-		<testViewChartLocation>bottom</testViewChartLocation>
-		<!-- custom javascript -->
-
-		<scripts>
+		<js>
 
 <![CDATA[
 $(document).ready(function() {
 });
 ]]>
-		</scripts>
+		</js>
 		<!-- custom styles -->
-		<styles>
+		<css>
 <![CDATA[
 ]]>
-		</styles>
+		</css>
 	</configuration>
 </extentreports>
