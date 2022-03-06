@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>extentreports-cucumberjson-report</artifactId>
-	<version>2.10.0</version>
+	<version>2.11.0</version>
 
 	<properties>
 		<project.reporting.outputEncoding>UTF-8
@@ -66,7 +66,7 @@
 			<plugin>
 				<groupId>tech.grasshopper</groupId>
 				<artifactId>extentreports-cucumberjson-plugin</artifactId>
-				<version>2.10.0</version>
+				<version>2.11.0</version>
 				<executions>
 					<execution>
 						<id>report</id>
