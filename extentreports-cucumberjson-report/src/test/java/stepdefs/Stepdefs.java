@@ -92,14 +92,14 @@ public class Stepdefs {
 
 	@Given("{string} background")
 	public void background(String type) {
-		System.out.format("%s type background. \n", type);
+		//System.out.format("%s type background. \n", type);
 	}
 
 	@Given("Write a {string} step with precondition in {string}")
 	@When("Complete action in {string} step in {string}")
 	@Then("Validate the outcome in {string} step in {string}")
 	public void step(String step, String scenario) throws InterruptedException {
-		System.out.format("%s step from %s.\n", step.toUpperCase(), scenario.toUpperCase());
+		//System.out.format("%s step from %s.\n", step.toUpperCase(), scenario.toUpperCase());
 		Thread.sleep(400);
 	}
 
@@ -118,13 +118,13 @@ public class Stepdefs {
 
 	@Given("Customer orders the dishes")
 	public void dataTable(List<List<String>> table) {
-		System.out.println(table);
+		//System.out.println(table);
 	}
 
 	@Given("the doc string is")
 	public void docStr(String docStr) {
 
-		System.out.println(docStr);
+		//System.out.println(docStr);
 	}
 
 	private WebDriver driver;
