@@ -64,6 +64,7 @@ public class Stepdefs {
 		// System.out.println("After failure");
 		scenario.log("FAILURE HI");
 		scenario.log("FAILURE HELLO");
+		throw new RuntimeException();
 	}
 
 	@BeforeStep(value = "@failure")
