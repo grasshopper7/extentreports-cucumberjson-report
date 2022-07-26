@@ -1,1 +1,1 @@
-For more details refer to this [article](http://ghchirp.tech/2114/)
+For more details refer to this [article](https://ghchirp.online/2114/)
